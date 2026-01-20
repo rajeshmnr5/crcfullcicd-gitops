@@ -17,6 +17,6 @@ spec:
       - name: nexus-regcred
       containers:
       - name: app
-        image: 192.168.29.202:32001/crcfullcicd:1
+        image: 192.168.29.202:32001/crcfullcicd:latest
         ports:
         - containerPort: 8080
