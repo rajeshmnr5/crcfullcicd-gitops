@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crcfullcicd
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crcfullcicd
+  template:
+    metadata:
+      labels:
+        app: crcfullcicd
+    spec:
+      imagePullSecrets:
+      - name: nexus-regcred
+      containers:
+      - name: app
+        image: 192.168.29.202:32001/crcfullcicd:1
+        ports:
+        - containerPort: 8080
